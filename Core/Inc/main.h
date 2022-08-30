@@ -29,6 +29,17 @@ extern "C" {
 /* Includes ------------------------------------------------------------------*/
 #include "stm32l4xx_hal.h"
 
+#include "stm32l4xx_ll_spi.h"
+#include "stm32l4xx_ll_system.h"
+#include "stm32l4xx_ll_gpio.h"
+#include "stm32l4xx_ll_exti.h"
+#include "stm32l4xx_ll_bus.h"
+#include "stm32l4xx_ll_cortex.h"
+#include "stm32l4xx_ll_rcc.h"
+#include "stm32l4xx_ll_utils.h"
+#include "stm32l4xx_ll_pwr.h"
+#include "stm32l4xx_ll_dma.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -57,19 +68,21 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define SPI2_CS_Pin GPIO_PIN_0
+#define SPI2_CS_Pin LL_GPIO_PIN_0
 #define SPI2_CS_GPIO_Port GPIOA
-#define KEY_Pin GPIO_PIN_0
+#define KEY_Pin LL_GPIO_PIN_0
 #define KEY_GPIO_Port GPIOB
-#define SERVO_EN_Pin GPIO_PIN_12
+#define SERVO_EN_Pin LL_GPIO_PIN_12
 #define SERVO_EN_GPIO_Port GPIOB
-#define DIR_Pin GPIO_PIN_12
+#define DIR_Pin LL_GPIO_PIN_12
 #define DIR_GPIO_Port GPIOA
-#define BMI160_INT2_Pin GPIO_PIN_11
+#define BMI160_INT2_Pin LL_GPIO_PIN_11
 #define BMI160_INT2_GPIO_Port GPIOC
-#define BMI160_INT1_Pin GPIO_PIN_12
+#define BMI160_INT2_EXTI_IRQn EXTI15_10_IRQn
+#define BMI160_INT1_Pin LL_GPIO_PIN_12
 #define BMI160_INT1_GPIO_Port GPIOC
-#define SPI1_CS_Pin GPIO_PIN_2
+#define BMI160_INT1_EXTI_IRQn EXTI15_10_IRQn
+#define SPI1_CS_Pin LL_GPIO_PIN_2
 #define SPI1_CS_GPIO_Port GPIOD
 /* USER CODE BEGIN Private defines */
 
