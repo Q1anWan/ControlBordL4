@@ -1,9 +1,9 @@
 mix_machine_l4/heap_4.o: \
   ..\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c \
-  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\stdlib.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h \
-  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\stddef.h \
-  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\Core\Inc\FreeRTOSConfig.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h \

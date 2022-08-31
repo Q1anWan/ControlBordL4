@@ -1,9 +1,9 @@
 mix_machine_l4/stream_buffer.o: \
   ..\Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c \
-  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\stdint.h \
-  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\string.h \
+  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\string.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h \
-  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\stddef.h \
   ..\Core\Inc\FreeRTOSConfig.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h \
