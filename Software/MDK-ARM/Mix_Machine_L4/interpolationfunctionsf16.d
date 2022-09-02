@@ -1,19 +1,19 @@
 mix_machine_l4/interpolationfunctionsf16.o: \
-  D:\Software\KEIL\ARM\CMSIS\5.9.0\CMSIS\DSP\Source\InterpolationFunctions\InterpolationFunctionsF16.c \
-  D:\Software\KEIL\ARM\CMSIS\5.9.0\CMSIS\DSP\Source\InterpolationFunctions\arm_bilinear_interp_f16.c \
-  D:\Software\KEIL\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\interpolation_functions_f16.h \
-  D:\Software\KEIL\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\arm_math_types_f16.h \
-  D:\Software\KEIL\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\arm_math_types.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Source\InterpolationFunctions\InterpolationFunctionsF16.c \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Source\InterpolationFunctions\arm_bilinear_interp_f16.c \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\interpolation_functions_f16.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\arm_math_types_f16.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\arm_math_types.h \
   ..\Drivers\CMSIS\Include\cmsis_compiler.h \
-  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\Drivers\CMSIS\Include\cmsis_armclang.h \
-  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
-  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
-  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\string.h \
-  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\math.h \
-  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\float.h \
-  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\limits.h \
-  D:\Software\KEIL\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\arm_math_memory.h \
-  D:\Software\KEIL\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\none.h \
-  D:\Software\KEIL\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\utils.h \
-  D:\Software\KEIL\ARM\CMSIS\5.9.0\CMSIS\DSP\Source\InterpolationFunctions\arm_linear_interp_f16.c
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\string.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\math.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\float.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\limits.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\arm_math_memory.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\none.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\utils.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Source\InterpolationFunctions\arm_linear_interp_f16.c

@@ -1,7 +1,7 @@
 mix_machine_l4/freertos.o: ..\Core\Src\freertos.c \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h \
-  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\stddef.h \
-  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\Core\Inc\FreeRTOSConfig.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\projdefs.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\portable.h \
@@ -20,8 +20,8 @@ mix_machine_l4/freertos.o: ..\Core\Src\freertos.c \
   ..\Drivers\CMSIS\Include\cmsis_version.h \
   ..\Drivers\CMSIS\Include\cmsis_compiler.h \
   ..\Drivers\CMSIS\Include\cmsis_armclang.h \
-  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
-  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
   ..\Drivers\CMSIS\Include\mpu_armv7.h \
   ..\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
@@ -59,4 +59,4 @@ mix_machine_l4/freertos.o: ..\Core\Src\freertos.c \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\queue.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\semphr.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\event_groups.h \
-  ..\Modules\myTaskList.h
+  ..\Modules\myTaskList.h ..\Core\Inc\tim.h

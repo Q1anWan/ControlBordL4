@@ -22,6 +22,8 @@
 #include "stm32l4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "cmsis_os.h"
+#include "myTaskList.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -41,7 +43,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-
+extern uint32_t Time_Counter;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -166,6 +168,29 @@ void DebugMon_Handler(void)
 /* For the available peripheral interrupt handler names,                      */
 /* please refer to the startup file (startup_stm32l4xx.s).                    */
 /******************************************************************************/
+
+/**
+  * @brief This function handles EXTI line0 interrupt.
+  */
+void EXTI0_IRQHandler(void)
+{
+  /* USER CODE BEGIN EXTI0_IRQn 0 */
+	BaseType_t xHigherPriorityTaskWoken;
+  /* USER CODE END EXTI0_IRQn 0 */
+  if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_0) != RESET)
+  {
+    LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_0);
+    /* USER CODE BEGIN LL_EXTI_LINE_0 */
+	/*屏蔽中断*/
+	LL_EXTI_DisableIT_0_31(LL_EXTI_LINE_0);
+	/*释放二值量*/
+	xSemaphoreGiveFromISR(KeyScanSemHandle,&xHigherPriorityTaskWoken);
+    /* USER CODE END LL_EXTI_LINE_0 */
+  }
+  /* USER CODE BEGIN EXTI0_IRQn 1 */
+
+  /* USER CODE END EXTI0_IRQn 1 */
+}
 
 /**
   * @brief This function handles DMA1 channel3 global interrupt.
@@ -316,7 +341,8 @@ void TIM6_DAC_IRQHandler(void)
   /* USER CODE END TIM6_DAC_IRQn 0 */
   HAL_TIM_IRQHandler(&htim6);
   /* USER CODE BEGIN TIM6_DAC_IRQn 1 */
-
+  ++Time_Counter;
+  
   /* USER CODE END TIM6_DAC_IRQn 1 */
 }
 

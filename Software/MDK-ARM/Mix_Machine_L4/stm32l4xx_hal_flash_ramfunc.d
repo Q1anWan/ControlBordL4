@@ -7,16 +7,16 @@ mix_machine_l4/stm32l4xx_hal_flash_ramfunc.o: \
   ..\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l4xx.h \
   ..\Drivers\CMSIS\Device\ST\STM32L4xx\Include\stm32l431xx.h \
   ..\Drivers\CMSIS\Include\core_cm4.h \
-  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\stdint.h \
   ..\Drivers\CMSIS\Include\cmsis_version.h \
   ..\Drivers\CMSIS\Include\cmsis_compiler.h \
   ..\Drivers\CMSIS\Include\cmsis_armclang.h \
-  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
-  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
   ..\Drivers\CMSIS\Include\mpu_armv7.h \
   ..\Drivers\CMSIS\Device\ST\STM32L4xx\Include\system_stm32l4xx.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
-  D:\Software\KEIL\ARM\ARMCLANG\Bin\..\include\stddef.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\stddef.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_rcc_ex.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_gpio.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_gpio_ex.h \

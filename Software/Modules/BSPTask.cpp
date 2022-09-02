@@ -1,5 +1,8 @@
 #include "BSPTask.h"
+#include "myTaskList.h"
 #include "tim.h"
+#include "string.h"
+#include "usart.h"
 
 void RGB_Task(void const * argument)
 {
@@ -13,10 +16,67 @@ void RGB_Task(void const * argument)
 		else if(RGB[i]==1000)RGB_ADD[i]*=-1;
 		}
 		__HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_4,RGB[0]);
-		__HAL_TIM_SetCompare(&htim16,TIM_CHANNEL_1,RGB[1]);
+		//__HAL_TIM_SetCompare(&htim16,TIM_CHANNEL_1,RGB[1]);
 		__HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_3,RGB[2]);
 		
-		osDelay(2);
+		osDelay(3);
 	}
 }
 	
+void KeyScan_Task(void const * argument)
+{
+	osDelay(10);
+	/*解决触发问题*/
+	LL_EXTI_EnableRisingTrig_0_31(LL_EXTI_LINE_0);
+	LL_EXTI_EnableIT_0_31(LL_EXTI_LINE_0);
+	for(;;)
+	{
+		/*获取二值量*/
+		xSemaphoreTake(KeyScanSemHandle,portMAX_DELAY);
+		/*消抖时间*/
+		osDelay(10);
+		/*确定按键状态*/
+		if(LL_GPIO_IsInputPinSet(KEY_GPIO_Port,KEY_Pin))
+		{__HAL_TIM_SetCompare(&htim16,TIM_CHANNEL_1,0);}
+		else
+		{__HAL_TIM_SetCompare(&htim16,TIM_CHANNEL_1,1000);}
+		/*重新启用中断*/
+		LL_EXTI_EnableIT_0_31(LL_EXTI_LINE_0);
+	}
+}
+
+uint32_t Time_Counter;
+#ifdef SHOW_SYS_INFO
+
+void configureTimerForRunTimeStats(void)
+{
+	HAL_TIM_Base_Start_IT(&htim6);
+	Time_Counter = 0;
+}
+
+unsigned long getRunTimeCounterValue(void)
+{
+	return Time_Counter;
+}
+
+void SysInf_Task(void const * argument)
+{
+	uint8_t CPU_RunInfo[400] = {0};
+	char MSG1[50]="\r\n任务名  任务状态  优先级  剩余栈  任务序号\r\n";
+	char MSG2[30] = "\r\n任务名  运行计数  使用率\r\n";
+
+	for(;;){
+    memset(CPU_RunInfo, 0, 400);
+    vTaskList((char *)&CPU_RunInfo);	
+	HAL_UART_Transmit(&huart2,(uint8_t *)MSG1,50,1000);
+	HAL_UART_Transmit(&huart2,CPU_RunInfo,400,2000);
+	osDelay(100);
+		
+    memset(CPU_RunInfo,0,400); 
+    vTaskGetRunTimeStats((char *)&CPU_RunInfo);
+	HAL_UART_Transmit(&huart2,(uint8_t *)MSG2,30,1000);
+	HAL_UART_Transmit(&huart2,CPU_RunInfo,400,2000);
+	osDelay(100);
+	}
+}
+#endif

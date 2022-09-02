@@ -71,6 +71,7 @@ void Error_Handler(void);
 #define SPI2_CS_GPIO_Port GPIOA
 #define KEY_Pin LL_GPIO_PIN_0
 #define KEY_GPIO_Port GPIOB
+#define KEY_EXTI_IRQn EXTI0_IRQn
 #define SERVO_EN_Pin LL_GPIO_PIN_12
 #define SERVO_EN_GPIO_Port GPIOB
 #define DIR_Pin LL_GPIO_PIN_12
