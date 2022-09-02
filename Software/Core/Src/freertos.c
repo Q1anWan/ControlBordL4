@@ -25,7 +25,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "tim.h"
+#include "myTaskList.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -81,7 +82,6 @@ void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackTy
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -107,6 +107,8 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+  Task_Init();
+
   /* USER CODE END RTOS_THREADS */
 
 }
@@ -121,19 +123,10 @@ void MX_FREERTOS_Init(void) {
 void StartDefaultTask(void const * argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
-	int8_t  RGB_ADD[3]={1,1,1};
-	uint16_t RGB[3]={333,0,999};
+	
   /* Infinite loop */
   for(;;)
   {
-	for(uint8_t i=0;i<3;i++){
-		RGB[i] += RGB_ADD[i];
-		if(RGB[i]==0)RGB_ADD[i]*=-1;
-		else if(RGB[i]==1000)RGB_ADD[i]*=-1;
-	}
-	__HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_4,RGB[0]);
-	__HAL_TIM_SetCompare(&htim16,TIM_CHANNEL_1,RGB[1]);
-	__HAL_TIM_SetCompare(&htim2,TIM_CHANNEL_3,RGB[2]);
 	HAL_GPIO_WritePin(SERVO_EN_GPIO_Port,SERVO_EN_Pin,Power);
     osDelay(1);
   }
