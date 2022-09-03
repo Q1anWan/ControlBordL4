@@ -1,6 +1,5 @@
-mix_machine_l4/flash_m4_hal.o: ..\Modules\Flash_M4_HAL.c \
-  ..\Modules\Flash_M4_HAL.h ..\Core\Inc\main.h \
-  ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal.h \
+mix_machine_l4/qcs_lite.o: ..\Modules\QCS_Lite.c ..\Modules\QCS_Lite.h \
+  ..\Core\Inc\main.h ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal.h \
   ..\Core\Inc\stm32l4xx_hal_conf.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_rcc.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_def.h \
@@ -45,4 +44,28 @@ mix_machine_l4/flash_m4_hal.o: ..\Modules\Flash_M4_HAL.c \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_ll_utils.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_ll_pwr.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_ll_dma.h \
-  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\string.h
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\arm_math.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\arm_math_types.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\string.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\math.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\float.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\limits.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\arm_math_memory.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\none.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\utils.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\basic_math_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\interpolation_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\bayes_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\statistics_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\fast_math_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\matrix_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\complex_math_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\controller_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\support_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\distance_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\svm_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\svm_defines.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\transform_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\filtering_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\quaternion_math_functions.h \
+  ..\Modules\MahonyAHRS.h

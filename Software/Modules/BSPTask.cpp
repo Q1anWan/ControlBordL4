@@ -48,7 +48,7 @@ void KeyScan_Task(void const * argument)
 }
 
 uint32_t Time_Counter;
-#ifdef SHOW_SYS_INFO
+#if (SHOW_SYS_INFO==1)
 
 void configureTimerForRunTimeStats(void)
 {
@@ -76,14 +76,14 @@ void SysInf_Task(void const * argument)
 			memset(CPU_RunInfo, 0, 400);
 			vTaskList((char *)&CPU_RunInfo);	
 			HAL_UART_Transmit(&huart2,(uint8_t *)MSG1,50,1000);
-			HAL_UART_Transmit(&huart2,CPU_RunInfo,400,2000);
+			HAL_UART_Transmit(&huart2,CPU_RunInfo,400,1000);
 		}
 		else
 		{
 			memset(CPU_RunInfo,0,400); 
 			vTaskGetRunTimeStats((char *)&CPU_RunInfo);
 			HAL_UART_Transmit(&huart2,(uint8_t *)MSG2,30,1000);
-			HAL_UART_Transmit(&huart2,CPU_RunInfo,400,2000);
+			HAL_UART_Transmit(&huart2,CPU_RunInfo,400,1000);
 		}
 	}
 }

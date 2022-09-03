@@ -1,6 +1,5 @@
-mix_machine_l4/flash_m4_hal.o: ..\Modules\Flash_M4_HAL.c \
-  ..\Modules\Flash_M4_HAL.h ..\Core\Inc\main.h \
-  ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal.h \
+mix_machine_l4/flash.o: ..\Modules\Flash.c ..\Modules\Flash.h \
+  ..\Core\Inc\main.h ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal.h \
   ..\Core\Inc\stm32l4xx_hal_conf.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_rcc.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_def.h \
@@ -44,5 +43,4 @@ mix_machine_l4/flash_m4_hal.o: ..\Modules\Flash_M4_HAL.c \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_ll_rcc.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_ll_utils.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_ll_pwr.h \
-  ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_ll_dma.h \
-  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\string.h
+  ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_ll_dma.h

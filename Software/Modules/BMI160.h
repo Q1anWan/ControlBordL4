@@ -4,14 +4,12 @@
 #include "cmsis_os.h"
 #ifdef __cplusplus
 
-#define BMI160LL_INT1_Port	BMI160_INT1_GPIO_Port
-#define BMI160LL_INT2_Port	BMI160_INT1_GPIO_Port
-#define BMI160LL_INT1_Pin	BMI160_INT1_Pin
-#define BMI160LL_INT2_Pin	BMI160_INT2_Pin
-#define IMU_DATA_ADDR 0x08007800 //Page15
-#define IMU_DATA_PAGE 15
-#define IMU_GYR_ZERO_ADDR 0x08007800
-#define IMU_ACC_ZERO_ADDR 0x08007818 //+12x2
+#define GYRO_CAIL_GO 0
+
+#define IMU_DATA_ADDR1 0x0803F800 //Page127 H:Gyro[0] L:Gyro[1]
+#define IMU_DATA_ADDR2 0x0803F808 //Page127 H:Gyro[2] L:NULL
+#define IMU_DATA_ADDR3 0x0803F810 //Page127 H:ACCEL[0] L:ACCEL[1]
+#define IMU_DATA_ADDR4 0x0803F818 //Page127 H:ACCEL[2] L:NULL
 class BMI160_C : public SPI_C
 {
 	protected:
@@ -33,11 +31,12 @@ class BMI160_C : public SPI_C
 	uint8_t IMU_Init(void);
 	uint8_t Read_Reg(uint8_t reg);
 	uint8_t Write_Reg(uint8_t Reg, uint8_t data);
-	void Read_6Reg(uint8_t reg, uint8_t *buf);
+	void Read_MultiReg(uint8_t reg,uint8_t *buf,uint16_t num);
 };
 extern "C"
 {
 	void BMI160_Rec_Task(void const * argument);
+	void BMI160_Tem_Task(void const * argument);
 }
 extern BMI160_C BMI160;
 //typedef struct 

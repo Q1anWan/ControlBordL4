@@ -99,4 +99,5 @@ mix_machine_l4/bmi160.o: ..\Modules\BMI160.cpp ..\Modules\BMI160.h \
   E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\svm_defines.h \
   E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\transform_functions.h \
   E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\filtering_functions.h \
-  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\quaternion_math_functions.h
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\quaternion_math_functions.h \
+  ..\Modules\Flash.h

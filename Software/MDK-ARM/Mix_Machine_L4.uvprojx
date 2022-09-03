@@ -930,6 +930,21 @@
               <FileType>8</FileType>
               <FilePath>..\Modules\SPI_LL.cpp</FilePath>
             </File>
+            <File>
+              <FileName>QCS_Lite.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Modules\QCS_Lite.c</FilePath>
+            </File>
+            <File>
+              <FileName>MahonyAHRS.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Modules\MahonyAHRS.c</FilePath>
+            </File>
+            <File>
+              <FileName>Flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Modules\Flash.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

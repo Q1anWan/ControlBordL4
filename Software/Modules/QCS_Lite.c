@@ -180,7 +180,7 @@ void QCS_init_data(void)
 ** 输入参数： 三轴陀螺仪数据,三轴加速度数据,坐标系旋转弧度
 ** 返回参数： 无
 ***********************************************************************/
-void QCS_AHRS_update(float gyro[], float accel[],float YC)
+void QCS_AHRS_update(float *gyro, float *accel,float YC)
 {	
 	//不使用地磁时调用MahonyAHRSupdateINS
 	#ifdef QCS_CORRECT
@@ -191,7 +191,6 @@ void QCS_AHRS_update(float gyro[], float accel[],float YC)
 	MahonyAHRSupdateINS(QCS_AHRSq, gyro[0], gyro[1], gyro[2], accel[0], accel[1], accel[2]);
 	#endif
 	
-
 }
 
 /***********************************************************************
@@ -201,7 +200,7 @@ void QCS_AHRS_update(float gyro[], float accel[],float YC)
 ** 输入参数： AHRS四元数
 ** 返回参数： 姿态角
 ***********************************************************************/
-void QCS_Show_Degree(float AHRSQ[4], float IMU_Degree[3])
+void QCS_Show_Degree(float *AHRSQ, float *IMU_Degree)
 {	
 	float temp[3];
 	QCS_GetRollAngel(AHRSQ,&temp[0]);

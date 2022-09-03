@@ -2,7 +2,7 @@
 #define MYTASKLIST_H
 #include "main.h"
 #include "cmsis_os.h"
-#define SHOW_SYS_INFO
+#define SHOW_SYS_INFO 1
 void Task_Init(void);
 extern osThreadId RGBTaskHandle;
 extern osThreadId KeyScanTaskHandle;

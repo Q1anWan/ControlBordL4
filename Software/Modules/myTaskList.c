@@ -3,7 +3,7 @@
 #include <string.h>
 #include "usart.h"
 
-#ifdef SHOW_SYS_INFO
+#if (SHOW_SYS_INFO==1)
 osThreadId SysInfTaskHandle;
 extern void SysInf_Task(void const * argument);
 #endif
@@ -12,6 +12,7 @@ extern osThreadId defaultTaskHandle;
 osThreadId RGBTaskHandle;
 osThreadId KeyScanTaskHandle;
 osThreadId IMURecTaskHandle;
+osThreadId IMUTemTaskHandle;
 
 osSemaphoreId KeyScanSemHandle;
 osSemaphoreId IMURecSemHandle;
@@ -19,11 +20,11 @@ osSemaphoreId IMURecSemHandle;
 extern void RGB_Task(void const * argument);
 extern void KeyScan_Task(void const * argument);
 extern void BMI160_Rec_Task(void const * argument);
-
+extern void BMI160_Tem_Task(void const * argument);
 
 void Task_Init(void)
 {
-	#ifdef SHOW_SYS_INFO
+	#if (SHOW_SYS_INFO==1)
 	osThreadDef(SysInfTask, SysInf_Task, osPriorityLow, 0, 256);
 	SysInfTaskHandle = osThreadCreate(osThread(SysInfTask), NULL);
 	#endif
@@ -43,6 +44,9 @@ void Task_Init(void)
 
 	osThreadDef(IMURecTask, BMI160_Rec_Task, osPriorityRealtime, 0, 128);
 	IMURecTaskHandle = osThreadCreate(osThread(IMURecTask), NULL);
+	
+	osThreadDef(IMUTemTask, BMI160_Tem_Task, osPriorityNormal, 0, 128);
+	IMUTemTaskHandle = osThreadCreate(osThread(IMUTemTask), NULL);
 
 }
 

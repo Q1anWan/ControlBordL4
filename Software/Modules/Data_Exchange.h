@@ -10,6 +10,9 @@
 #ifndef DATA_EXCHANGE_H
 #define DATA_EXCHANGE_H
 #include "main.h"
+#ifdef __cplusplus
+extern "C" {
+#endif
 //结构体封装函数
 struct Transform_t
 {
@@ -22,4 +25,7 @@ struct Transform_t
 };
 
 extern struct Transform_t Transform;
+#ifdef __cplusplus
+}
+#endif
 #endif

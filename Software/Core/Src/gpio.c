@@ -53,21 +53,18 @@ void MX_GPIO_Init(void)
   LL_AHB2_GRP1_EnableClock(LL_AHB2_GRP1_PERIPH_GPIOD);
 
   /**/
-  LL_GPIO_ResetOutputPin(SPI2_CS_GPIO_Port, SPI2_CS_Pin);
-
-  /**/
-  LL_GPIO_ResetOutputPin(SERVO_EN_GPIO_Port, SERVO_EN_Pin);
-
-  /**/
-  LL_GPIO_SetOutputPin(DIR_GPIO_Port, DIR_Pin);
+  LL_GPIO_SetOutputPin(GPIOA, SPI2_CS_Pin|DIR_Pin);
 
   /**/
   LL_GPIO_SetOutputPin(SPI1_CS_GPIO_Port, SPI1_CS_Pin);
 
   /**/
+  LL_GPIO_ResetOutputPin(SERVO_EN_GPIO_Port, SERVO_EN_Pin);
+
+  /**/
   GPIO_InitStruct.Pin = SPI2_CS_Pin;
   GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
-  GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_LOW;
+  GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_VERY_HIGH;
   GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
   GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
   LL_GPIO_Init(SPI2_CS_GPIO_Port, &GPIO_InitStruct);
@@ -91,7 +88,7 @@ void MX_GPIO_Init(void)
   /**/
   GPIO_InitStruct.Pin = SPI1_CS_Pin;
   GPIO_InitStruct.Mode = LL_GPIO_MODE_OUTPUT;
-  GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_HIGH;
+  GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_VERY_HIGH;
   GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
   GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
   LL_GPIO_Init(SPI1_CS_GPIO_Port, &GPIO_InitStruct);
