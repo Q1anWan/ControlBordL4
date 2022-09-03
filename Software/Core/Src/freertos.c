@@ -76,7 +76,7 @@ __weak void configureTimerForRunTimeStats(void)
 
 __weak unsigned long getRunTimeCounterValue(void)
 {
-	return 0;
+return 0;
 }
 /* USER CODE END 1 */
 

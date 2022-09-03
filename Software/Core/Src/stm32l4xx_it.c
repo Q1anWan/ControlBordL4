@@ -310,7 +310,7 @@ void USART3_IRQHandler(void)
 void EXTI15_10_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
-
+	BaseType_t xHigherPriorityTaskWoken;
   /* USER CODE END EXTI15_10_IRQn 0 */
   if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_11) != RESET)
   {
@@ -323,7 +323,9 @@ void EXTI15_10_IRQHandler(void)
   {
     LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_12);
     /* USER CODE BEGIN LL_EXTI_LINE_12 */
-
+	LL_EXTI_DisableIT_0_31(LL_EXTI_LINE_12);
+	/*释放二值量*/
+	xSemaphoreGiveFromISR(IMURecSemHandle,&xHigherPriorityTaskWoken);
     /* USER CODE END LL_EXTI_LINE_12 */
   }
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */

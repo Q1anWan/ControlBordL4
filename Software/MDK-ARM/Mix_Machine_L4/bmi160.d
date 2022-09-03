@@ -1,5 +1,6 @@
-mix_machine_l4/bsptask.o: ..\Modules\BSPTask.cpp ..\Modules\BSPTask.h \
-  ..\Core\Inc\main.h ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal.h \
+mix_machine_l4/bmi160.o: ..\Modules\BMI160.cpp ..\Modules\BMI160.h \
+  ..\Modules\SPI_LL.h ..\Core\Inc\main.h \
+  ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal.h \
   ..\Core\Inc\stm32l4xx_hal_conf.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_rcc.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_def.h \
@@ -48,6 +49,7 @@ mix_machine_l4/bsptask.o: ..\Modules\BSPTask.cpp ..\Modules\BSPTask.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_ll_utils.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_ll_pwr.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_ll_dma.h \
+  ..\Core\Inc\spi.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS\cmsis_os.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h \
   ..\Core\Inc\FreeRTOSConfig.h \
@@ -62,7 +64,39 @@ mix_machine_l4/bsptask.o: ..\Modules\BSPTask.cpp ..\Modules\BSPTask.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\queue.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\semphr.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\event_groups.h \
-  ..\Modules\myTaskList.h ..\Core\Inc\tim.h \
+  ..\Modules\myTaskList.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\arm_math.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\arm_math_types.h \
   E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
   E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\string.h \
-  ..\Core\Inc\usart.h
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\math.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\libcxx\limits \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\libcxx\type_traits \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\libcxx\cstddef \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\libcxx\version \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\libcxx\__undef_macros \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\libcxx\stdlib.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\libcxx\float.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\float.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\libcxx\limits.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\limits.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\arm_math_memory.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\none.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\utils.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\basic_math_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\interpolation_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\bayes_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\statistics_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\fast_math_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\matrix_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\complex_math_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\controller_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\support_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\distance_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\svm_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\svm_defines.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\transform_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\filtering_functions.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\quaternion_math_functions.h

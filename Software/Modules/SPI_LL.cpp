@@ -173,7 +173,7 @@ uint8_t SPI_C::MesgTransmit(uint8_t *pdata, uint32_t size)
 }
 
 /*启动SPI DMA时*/
-#if defined(DMA1) || defined(DMA2) || defined(DMA3)
+#if (ENABLE_SPI_DMA==1)
 /*
 	DMA中断回调函数
 	清除数据传输完成中断并置标志位
@@ -222,6 +222,4 @@ void SPI_C::MesgTransmit_DMA(uint8_t *pdata, uint32_t size)
 	this->IsDMATransmitOK = 1;
 }
 #endif
-
-SPI_C SPI_1;
 #endif

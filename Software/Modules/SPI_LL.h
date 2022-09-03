@@ -1,9 +1,10 @@
 /*
 	SPI LowLayer库SPI支持
-	  千万 2022.6.21
+	  千万 2022.9.03
 	  F1 F4 G0 G4 H7
 	  Version:1.0			基础版本
 	  Version:1.0.1			修复发送函数阻塞不完全问题
+	  Version:1.1.0			修改使能DMA方式
 	启用DMA收发需要DMA_LL库支持
 */
 /*
@@ -19,17 +20,20 @@
 #define SPI_LL_H
 
 #include "main.h"
+
+#define ENABLE_SPI_DMA 0
+
 #if defined(SPI1) || defined(SPI2) || defined(SPI3) || defined(SPI4)
 #include "spi.h"
-#if defined(DMA1) || defined(DMA2) || defined(DMA3)
+#if (ENABLE_SPI_DMA==1)
 #include "DMA_LL.h"
 #endif
 #ifdef __cplusplus
-#if defined(DMA1) || defined(DMA2) || defined(DMA3)
+#if (ENABLE_SPI_DMA==1)
 class SPI_C : public DMA_C
 #endif
-#if !defined(DMA1) && !defined(DMA2) && !defined(DMA3)
-			  class SPI_C
+#if (ENABLE_SPI_DMA==0)
+class SPI_C
 #endif
 {
 public:
@@ -50,7 +54,7 @@ private:
 	uint8_t blank_reg = 0xff;
 
 /*启动SPI DMA时*/
-#if defined(DMA1) || defined(DMA2) || defined(DMA3)
+#if (ENABLE_SPI_DMA==1)
 public:
 	uint8_t IsDMATransmitOK = 0;
 	void DMA_IQR_Handel(void);
@@ -58,7 +62,6 @@ public:
 #endif
 };
 
-extern SPI_C SPI_1;
 extern "C"
 {
 }

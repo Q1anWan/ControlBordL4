@@ -180,6 +180,21 @@
           <WinNumber>1</WinNumber>
           <ItemText>CPU_RunInfo</ItemText>
         </Ww>
+        <Ww>
+          <count>4</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>BMI160,0x10</ItemText>
+        </Ww>
+        <Ww>
+          <count>5</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>Data</ItemText>
+        </Ww>
+        <Ww>
+          <count>6</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>DRDY_ID</ItemText>
+        </Ww>
       </WatchWindow1>
       <Tracepoint>
         <THDelay>0</THDelay>
@@ -407,7 +422,7 @@
 
   <Group>
     <GroupName>Drivers/STM32L4xx_HAL_Driver</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -646,8 +661,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l4xx_hal_spi.c</FilenameWithoutPath>
+      <PathWithFileName>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_spi.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l4xx_ll_spi.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -658,8 +673,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi_ex.c</PathWithFileName>
-      <FilenameWithoutPath>stm32l4xx_hal_spi_ex.c</FilenameWithoutPath>
+      <PathWithFileName>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_dma.c</PathWithFileName>
+      <FilenameWithoutPath>stm32l4xx_ll_dma.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -888,6 +903,30 @@
       <bDave2>0</bDave2>
       <PathWithFileName>..\Modules\BSPTask.cpp</PathWithFileName>
       <FilenameWithoutPath>BSPTask.cpp</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>6</GroupNumber>
+      <FileNumber>52</FileNumber>
+      <FileType>8</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Modules\BMI160.cpp</PathWithFileName>
+      <FilenameWithoutPath>BMI160.cpp</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>6</GroupNumber>
+      <FileNumber>53</FileNumber>
+      <FileType>8</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\Modules\SPI_LL.cpp</PathWithFileName>
+      <FilenameWithoutPath>SPI_LL.cpp</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

@@ -709,9 +709,9 @@
               <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c</FilePath>
             </File>
             <File>
-              <FileName>stm32l4xx_hal_spi.c</FileName>
+              <FileName>stm32l4xx_ll_spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_spi.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -765,9 +765,9 @@
               </FileOption>
             </File>
             <File>
-              <FileName>stm32l4xx_hal_spi_ex.c</FileName>
+              <FileName>stm32l4xx_ll_dma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_spi_ex.c</FilePath>
+              <FilePath>../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_ll_dma.c</FilePath>
               <FileOption>
                 <CommonProperty>
                   <UseCPPCompiler>2</UseCPPCompiler>
@@ -919,6 +919,16 @@
               <FileName>BSPTask.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\Modules\BSPTask.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>BMI160.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Modules\BMI160.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>SPI_LL.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>..\Modules\SPI_LL.cpp</FilePath>
             </File>
           </Files>
         </Group>
