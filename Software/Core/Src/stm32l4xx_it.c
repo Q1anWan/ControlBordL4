@@ -188,7 +188,6 @@ void EXTI0_IRQHandler(void)
     /* USER CODE END LL_EXTI_LINE_0 */
   }
   /* USER CODE BEGIN EXTI0_IRQn 1 */
-
   /* USER CODE END EXTI0_IRQn 1 */
 }
 
@@ -316,20 +315,18 @@ void EXTI15_10_IRQHandler(void)
   {
     LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_11);
     /* USER CODE BEGIN LL_EXTI_LINE_11 */
-
     /* USER CODE END LL_EXTI_LINE_11 */
   }
   if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_12) != RESET)
   {
     LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_12);
     /* USER CODE BEGIN LL_EXTI_LINE_12 */
-	LL_EXTI_DisableIT_0_31(LL_EXTI_LINE_12);
 	/*释放二值量*/
+	LL_EXTI_DisableIT_0_31(LL_EXTI_LINE_12);
 	xSemaphoreGiveFromISR(IMURecSemHandle,&xHigherPriorityTaskWoken);
     /* USER CODE END LL_EXTI_LINE_12 */
   }
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
-
   /* USER CODE END EXTI15_10_IRQn 1 */
 }
 

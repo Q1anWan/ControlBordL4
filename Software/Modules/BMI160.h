@@ -1,16 +1,17 @@
 #ifndef BMI160_LL_H
 #define BMI160_LL_H
 #include "SPI_LL.h"
+#include "PID.h"
 #include "cmsis_os.h"
 #ifdef __cplusplus
 
-#define GYRO_CAIL_GO 0
+#define GYRO_CAIL_GO 1
 
 #define IMU_DATA_ADDR1 0x0803F800 //Page127 H:Gyro[0] L:Gyro[1]
 #define IMU_DATA_ADDR2 0x0803F808 //Page127 H:Gyro[2] L:NULL
 #define IMU_DATA_ADDR3 0x0803F810 //Page127 H:ACCEL[0] L:ACCEL[1]
 #define IMU_DATA_ADDR4 0x0803F818 //Page127 H:ACCEL[2] L:NULL
-class BMI160_C : public SPI_C
+class BMI160_C : public SPI_C ,public PID_Inc_C
 {
 	protected:
 	uint8_t Chip_ID = 0;
@@ -28,6 +29,9 @@ class BMI160_C : public SPI_C
 	float Accel_calib[3]={0} ;
 	float Temperature ;
 	
+	float AHRS_Q[4]={1.0f,0,0,0};
+	float Angel[3]={0};
+		
 	uint8_t IMU_Init(void);
 	uint8_t Read_Reg(uint8_t reg);
 	uint8_t Write_Reg(uint8_t Reg, uint8_t data);
@@ -37,6 +41,7 @@ extern "C"
 {
 	void BMI160_Rec_Task(void const * argument);
 	void BMI160_Tem_Task(void const * argument);
+	void BMI160_InsUpdate_Task(void const * argument);
 }
 extern BMI160_C BMI160;
 //typedef struct 

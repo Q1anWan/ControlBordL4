@@ -49,7 +49,7 @@ mix_machine_l4/bmi160.o: ..\Modules\BMI160.cpp ..\Modules\BMI160.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_ll_utils.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_ll_pwr.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_ll_dma.h \
-  ..\Core\Inc\spi.h \
+  ..\Core\Inc\spi.h ..\Modules\PID.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS\cmsis_os.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\FreeRTOS.h \
   ..\Core\Inc\FreeRTOSConfig.h \
@@ -100,4 +100,5 @@ mix_machine_l4/bmi160.o: ..\Modules\BMI160.cpp ..\Modules\BMI160.h \
   E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\transform_functions.h \
   E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\filtering_functions.h \
   E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\quaternion_math_functions.h \
-  ..\Modules\Flash.h
+  ..\Modules\Flash.h ..\Modules\QCS_Lite.h ..\Core\Inc\tim.h \
+  ..\Core\Inc\usart.h

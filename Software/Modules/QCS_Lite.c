@@ -4,7 +4,9 @@
 ** 项目名称：   QCS四元数惯性坐标系统精简版
 ** 日    期：   2022-04-12
 ** 作    者：   qianwan
-** 版    本：   1.2
+** 版    本：   1.3
+**---------------------------------------------------------------
+**2022-09-04 1.3更新：支持C++调用，修改变量名称
 **---------------------------------------------------------------
 ** 文 件 名：   QCS_Lite.c
 ** 代码需求：   CMSIS 5.8.0
@@ -15,8 +17,7 @@
 #include "MahonyAHRS.h"
 
 /*---------------------VARIABLES---------------------*/
-float IMU_quat[4] = {0.0f};
-float QCS_AHRSq[4]={0};
+float QCS_IMU_Q[4]={1.0f,0,0,0};
 /*---------------------FUNCTIONS---------------------*/
 /***********************************************************************
 ** 函 数 名： QCS_Rotate
@@ -169,26 +170,29 @@ void QCS_CorrectAHRSq(float q[4],float AHRSQ[4],float YC)
 ***********************************************************************/
 void QCS_init_data(void)
 {
-	IMU_quat[0] = 1.0f; IMU_quat[1] = 0.0f; IMU_quat[2] = 0.0f; IMU_quat[3] = 0.0f; 
-	QCS_AHRSq[0]=1.0f;QCS_AHRSq[1]=0.0f;QCS_AHRSq[2]=0.0f;QCS_AHRSq[3]=0.0f;
+	QCS_IMU_Q[0]=1.0f;QCS_IMU_Q[1]=0.0f;QCS_IMU_Q[2]=0.0f;QCS_IMU_Q[3]=0.0f;
 }
 
 /***********************************************************************
 ** 函 数 名： QCS_IMU_update()
-** 函数说明： 更新AHRS四元数(在0.8KHz外部中断调用)
+** 函数说明： 更新AHRS四元数
 **---------------------------------------------------------------------
 ** 输入参数： 三轴陀螺仪数据,三轴加速度数据,坐标系旋转弧度
 ** 返回参数： 无
 ***********************************************************************/
-void QCS_AHRS_update(float *gyro, float *accel,float YC)
+void QCS_AHRS_update(float *AHRS_Q,float *gyro, float *accel,float YC)
 {	
 	//不使用地磁时调用MahonyAHRSupdateINS
 	#ifdef QCS_CORRECT
-	MahonyAHRSupdateINS(IMU_quat, gyro[0], gyro[1], gyro[2], accel[0], accel[1], accel[2]);
-	QCS_CorrectAHRSq(IMU_quat,QCS_AHRSq,YC);
+	MahonyAHRSupdateINS(QCS_IMU_Q, gyro[0], gyro[1], gyro[2], accel[0], accel[1], accel[2]);
+	QCS_CorrectAHRSq(QCS_IMU_Q,AHRS_Q,YC);
 	#endif
 	#ifndef QCS_CORRECT
-	MahonyAHRSupdateINS(QCS_AHRSq, gyro[0], gyro[1], gyro[2], accel[0], accel[1], accel[2]);
+	MahonyAHRSupdateINS(QCS_IMU_Q, gyro[0], gyro[1], gyro[2], accel[0], accel[1], accel[2]);
+	AHRS_Q[0] = QCS_IMU_Q[0];
+	AHRS_Q[1] = QCS_IMU_Q[1];
+	AHRS_Q[2] = QCS_IMU_Q[2];
+	AHRS_Q[3] = QCS_IMU_Q[3];
 	#endif
 	
 }
