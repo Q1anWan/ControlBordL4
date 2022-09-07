@@ -208,7 +208,7 @@
         <Ww>
           <count>9</count>
           <WinNumber>1</WinNumber>
-          <ItemText>times</ItemText>
+          <ItemText>times,0x0A</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>

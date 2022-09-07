@@ -94,6 +94,7 @@ void BMI160_Rec_Task(void const * argument)
 			Temp[0] = ((uint64_t)Temp2[0]<<32)+(uint64_t)Temp2[1];
 			Temp[1] = ((uint64_t)Temp2[2]<<32);
 			Temp[3] = 0;Temp[4] = 0;
+			qFlash_ErasePage(127);
 			qFlash_WriteData(IMU_DATA_ADDR1,Temp,4);
 			vPortFree(Temp);
 			vPortFree(Temp2);

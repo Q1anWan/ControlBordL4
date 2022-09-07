@@ -1838,7 +1838,7 @@ I (..\Middlewares\Third_Party\FreeRTOS\Source\include\semphr.h)(0x62BB2F97)
 I (..\Middlewares\Third_Party\FreeRTOS\Source\include\event_groups.h)(0x62BB2F97)
 I (..\Modules\myTaskList.h)(0x6314E0DF)
 I (..\Core\Inc\tim.h)(0x6310BB8A)
-I (..\Modules\BMI160.h)(0x6314D102)
+I (..\Modules\BMI160.h)(0x63162215)
 I (..\Modules\SPI_LL.h)(0x63130620)
 I (..\Core\Inc\spi.h)(0x63130181)
 I (..\Modules\PID.h)(0x63145A7F)
@@ -1884,8 +1884,8 @@ I (E:\Professional\STM32\MDK\ARM\ARMCLANG\include\stdio.h)(0x625260D6)
 I (E:\Professional\STM32\MDK\ARM\ARMCLANG\include\stdarg.h)(0x625260D8)
 I (..\Modules\OLED.h)(0x631494F8)
 I (..\Core\Inc\i2c.h)(0x6310BB8A)
-F (..\Modules\BMI160.cpp)(0x6314D0FF)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Modules-I./RTE/_Mix_Machine_L4-IE:/Professional/STM32/MDK5/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IE:/Professional/STM32/MDK5/ARM/CMSIS/5.9.0/CMSIS/DSP/Include-IE:/Professional/STM32/MDK5/ARM/CMSIS/5.9.0/CMSIS/DSP/PrivateInclude-IE:/Professional/STM32/MDK5/Keil/STM32L4xx_DFP/2.6.1/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L431xx -DUSE_FULL_LL_DRIVER-o mix_machine_l4/bmi160.o -MD)
-I (..\Modules\BMI160.h)(0x6314D102)
+F (..\Modules\BMI160.cpp)(0x631620E2)(-xc++ -std=c++11 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar -fno-exceptions-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../Modules-I./RTE/_Mix_Machine_L4-IE:/Professional/STM32/MDK5/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IE:/Professional/STM32/MDK5/ARM/CMSIS/5.9.0/CMSIS/DSP/Include-IE:/Professional/STM32/MDK5/ARM/CMSIS/5.9.0/CMSIS/DSP/PrivateInclude-IE:/Professional/STM32/MDK5/Keil/STM32L4xx_DFP/2.6.1/Drivers/CMSIS/Device/ST/STM32L4xx/Include-D__UVISION_VERSION="537" -D_RTE_ -DSTM32L431xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32L431xx -DUSE_FULL_LL_DRIVER-o mix_machine_l4/bmi160.o -MD)
+I (..\Modules\BMI160.h)(0x63162215)
 I (..\Modules\SPI_LL.h)(0x63130620)
 I (..\Core\Inc\main.h)(0x6313977B)
 I (..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal.h)(0x62BB2FB6)

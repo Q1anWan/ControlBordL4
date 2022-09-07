@@ -5,7 +5,7 @@
 #include "cmsis_os.h"
 #ifdef __cplusplus
 
-#define GYRO_CAIL_GO 1
+#define GYRO_CAIL_GO 0
 
 #define IMU_DATA_ADDR1 0x0803F800 //Page127 H:Gyro[0] L:Gyro[1]
 #define IMU_DATA_ADDR2 0x0803F808 //Page127 H:Gyro[2] L:NULL
