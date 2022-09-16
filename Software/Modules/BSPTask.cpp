@@ -1,17 +1,25 @@
 #include "BSPTask.h"
-#include "myTaskList.h"
-#include "tim.h"
-#include "BMI160.h"
-#include "QCS_Lite.h"
+
 #include "string.h"
-#include "usart.h"
 #include <stdio.h>
 #include <stdarg.h>
+
+#include "tim.h"
+#include "usart.h"
+#include "adc.h"
+
+#include "myTaskList.h"
+#include "BMI160.h"
+#include "QCS_Lite.h"
 #include "OLED.h"
 #include "SPI_LL.h"
+
 SPI_C SPI_2;
 uint8_t KEY_Value=0;
 uint8_t Printf_buf[256];
+
+uint16_t ADC=1499;
+float VDDA=0.0f;
 
 void RGB_Task(void const * argument)
 {
@@ -77,6 +85,8 @@ void usb_printf(const char *fmt,...)
     va_end(ap);
 	HAL_UART_Transmit(&huart2,Printf_buf,len,1000);
 }
+
+/*这个进程中，使用IIC驱动OLED刷新了一次图像，并测试了SPI2和UART1接口*/
 void OLED_Task(void const * argument)
 {
 	vTaskDelay(100);
@@ -95,6 +105,45 @@ void OLED_Task(void const * argument)
 	}
 }
 
+/*这个进程中，使用了4位超采样读取了内部电压值，并校准了VDDA值*/
+void ADC_Task(void const * argument)
+{
+	uint16_t ADC_A=0;
+	uint32_t ADC_S=0;
+	vTaskDelay(100);
+	HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
+	vTaskDelay(100);
+	HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
+	vTaskDelay(100);
+		
+	for(uint16_t i=0;i<1000;i++)			//预热
+	{
+		vTaskDelay(10);
+		HAL_ADC_Start(&hadc1);	            //启动ADC单次转换
+		vTaskDelay(10);
+		ADC_A = HAL_ADC_GetValue(&hadc1); 	//读取ADC转换数据
+		ADC = 0.9*ADC+0.1*ADC_A;			//一阶低通滤波
+	}
+	for(uint16_t i=0;i<1000;i++)			//校准VDDA
+	{
+		vTaskDelay(10);
+		HAL_ADC_Start(&hadc1);	             //启动ADC单次转换
+		vTaskDelay(10);
+		ADC_A = HAL_ADC_GetValue(&hadc1); 	//读取ADC转换数据
+		ADC = 0.9*ADC+0.1*ADC_A;	
+		ADC_S += ADC;
+	}
+	ADC_S /= 1000;							//计算VDDA
+	VDDA = (3.0f*(*(__IO uint16_t *)(0x1FFF75AA))) / ADC_S;	//读取校准参数
+	for(;;)
+	{
+		vTaskDelay(10);
+		HAL_ADC_Start(&hadc1);	            //启动ADC单次转换
+		vTaskDelay(10);
+		ADC_A = HAL_ADC_GetValue(&hadc1); 	//读取ADC转换数据
+		ADC = 0.9*ADC+0.1*ADC_A;
+	}
+}
 uint32_t Time_Counter;
 #if (SHOW_SYS_INFO==1)
 

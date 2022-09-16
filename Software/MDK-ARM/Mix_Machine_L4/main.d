@@ -21,6 +21,9 @@ mix_machine_l4/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_gpio_ex.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_dma.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_cortex.h \
+  ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_adc.h \
+  ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_ll_adc.h \
+  ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_adc_ex.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_can.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_exti.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_flash.h \
@@ -58,6 +61,6 @@ mix_machine_l4/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\queue.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\semphr.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\event_groups.h \
-  ..\Core\Inc\can.h ..\Core\Inc\dma.h ..\Core\Inc\i2c.h \
-  ..\Core\Inc\spi.h ..\Core\Inc\tim.h ..\Core\Inc\usart.h \
-  ..\Core\Inc\gpio.h
+  ..\Core\Inc\adc.h ..\Core\Inc\can.h ..\Core\Inc\dma.h \
+  ..\Core\Inc\i2c.h ..\Core\Inc\spi.h ..\Core\Inc\tim.h \
+  ..\Core\Inc\usart.h ..\Core\Inc\gpio.h

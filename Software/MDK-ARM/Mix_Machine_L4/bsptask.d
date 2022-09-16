@@ -25,6 +25,9 @@ mix_machine_l4/bsptask.o: ..\Modules\BSPTask.cpp ..\Modules\BSPTask.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_gpio_ex.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_dma.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_cortex.h \
+  ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_adc.h \
+  ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_ll_adc.h \
+  ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_adc_ex.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_can.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_exti.h \
   ..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_flash.h \
@@ -62,13 +65,16 @@ mix_machine_l4/bsptask.o: ..\Modules\BSPTask.cpp ..\Modules\BSPTask.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\queue.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\semphr.h \
   ..\Middlewares\Third_Party\FreeRTOS\Source\include\event_groups.h \
-  ..\Modules\myTaskList.h ..\Core\Inc\tim.h ..\Modules\BMI160.h \
-  ..\Modules\SPI_LL.h ..\Core\Inc\spi.h ..\Modules\PID.h \
-  ..\Modules\QCS_Lite.h \
-  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\arm_math.h \
-  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\arm_math_types.h \
   E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
   E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\string.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\stdarg.h \
+  ..\Core\Inc\tim.h ..\Core\Inc\usart.h ..\Core\Inc\adc.h \
+  ..\Modules\myTaskList.h ..\Modules\BMI160.h ..\Modules\SPI_LL.h \
+  ..\Core\Inc\spi.h ..\Modules\PID.h ..\Modules\QCS_Lite.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\arm_math.h \
+  E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\arm_math_types.h \
   E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\libcxx\math.h \
   E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\math.h \
   E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\libcxx\limits \
@@ -100,8 +106,4 @@ mix_machine_l4/bsptask.o: ..\Modules\BSPTask.cpp ..\Modules\BSPTask.h \
   E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\transform_functions.h \
   E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\filtering_functions.h \
   E:\Professional\STM32\MDK5\ARM\CMSIS\5.9.0\CMSIS\DSP\Include\dsp\quaternion_math_functions.h \
-  ..\Core\Inc\usart.h \
-  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\libcxx\stdio.h \
-  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\stdio.h \
-  E:\Professional\STM32\MDK\ARM\ARMCLANG\Bin\..\include\stdarg.h \
   ..\Modules\OLED.h ..\Core\Inc\i2c.h

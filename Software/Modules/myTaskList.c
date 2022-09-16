@@ -16,6 +16,7 @@ osThreadId IMUTemTaskHandle;
 osThreadId IMUShowAngelHandle;
 osThreadId CANTaskHandle;
 osThreadId OLEDTaskHandle;
+osThreadId ADCTaskHandle;
 
 osSemaphoreId KeyScanSemHandle;
 osSemaphoreId IMURecSemHandle;
@@ -27,6 +28,7 @@ extern void BMI160_Tem_Task(void const * argument);
 extern void BMI160_InsUpdate_Task(void const * argument);
 extern void CAN_Task(void const * argument);
 extern void OLED_Task(void const * argument);
+extern void ADC_Task(void const * argument);
 
 void Task_Init(void)
 {
@@ -62,6 +64,9 @@ void Task_Init(void)
 	
 	osThreadDef(CANTask, CAN_Task, osPriorityNormal, 0, 256);
 	CANTaskHandle = osThreadCreate(osThread(CANTask), NULL);
+	
+	osThreadDef(ADCTask, ADC_Task, osPriorityNormal, 0, 128);
+	ADCTaskHandle = osThreadCreate(osThread(ADCTask), NULL);
 
 }
 

@@ -10,6 +10,7 @@ extern "C"
 	void KeyScan_Task(void const * argument);
 	void SysInf_Task(void const * argument);
 	void OLED_Task(void const * argument);
+	void ADC_Task(void const * argument);
 }
 void usb_printf(const char *fmt,...);
 #endif
